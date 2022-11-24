@@ -19,30 +19,33 @@ const unsigned int width = 1920;
 const unsigned int height = 1080;
 
 
-
+float Trang_offset_x = 9;
+float Trang_offset_z = 0;
+float Trang_offset_y = 3;
+float Trang_scall = 1;
 // Vertices coordinates
 GLfloat vertices[] =
 { //     COORDINATES     /        COLORS          /    TexCoord   /        NORMALS       //
-	-0.5f, 0.0f,  0.5f,     0.83f, 0.70f, 0.44f, 	 0.0f, 0.0f,      0.0f, -1.0f, 0.0f, // Bottom side
-	-0.5f, 0.0f, -0.5f,     0.83f, 0.70f, 0.44f,	 0.0f, 5.0f,      0.0f, -1.0f, 0.0f, // Bottom side
-	 0.5f, 0.0f, -0.5f,     0.83f, 0.70f, 0.44f,	 5.0f, 5.0f,      0.0f, -1.0f, 0.0f, // Bottom side
-	 0.5f, 0.0f,  0.5f,     0.83f, 0.70f, 0.44f,	 5.0f, 0.0f,      0.0f, -1.0f, 0.0f, // Bottom side
+	Trang_offset_x + (Trang_scall) * -0.5f,	Trang_offset_z + (Trang_scall) * 0.0f,	Trang_offset_y + (Trang_scall) * 0.5f,     0.83f, 0.70f, 0.44f, 	 0.0f, 0.0f,      0.0f, -1.0f, 0.0f, // Bottom side
+	Trang_offset_x + (Trang_scall) * -0.5f,	Trang_offset_z + (Trang_scall) * 0.0f,	Trang_offset_y + (Trang_scall) * -0.5f,     0.83f, 0.70f, 0.44f,	 0.0f, 5.0f,      0.0f, -1.0f, 0.0f, // Bottom side
+	Trang_offset_x + (Trang_scall) * 0.5f,	Trang_offset_z + (Trang_scall) * 0.0f,	Trang_offset_y + (Trang_scall) * -0.5f,     0.83f, 0.70f, 0.44f,	 5.0f, 5.0f,      0.0f, -1.0f, 0.0f, // Bottom side
+	Trang_offset_x + (Trang_scall) * 0.5f,	Trang_offset_z + (Trang_scall) * 0.0f,	Trang_offset_y + (Trang_scall) * 0.5f,     0.83f, 0.70f, 0.44f,	 5.0f, 0.0f,      0.0f, -1.0f, 0.0f, // Bottom side
 
-	-0.5f, 0.0f,  0.5f,     0.83f, 0.70f, 0.44f, 	 0.0f, 0.0f,     -0.8f, 0.5f,  0.0f, // Left Side
-	-0.5f, 0.0f, -0.5f,     0.83f, 0.70f, 0.44f,	 5.0f, 0.0f,     -0.8f, 0.5f,  0.0f, // Left Side
-	 0.0f, 0.8f,  0.0f,     0.92f, 0.86f, 0.76f,	 2.5f, 5.0f,     -0.8f, 0.5f,  0.0f, // Left Side
+	Trang_offset_x + (Trang_scall) * -0.5f,	Trang_offset_z + (Trang_scall) * 0.0f,	Trang_offset_y + (Trang_scall) * 0.5f,     0.83f, 0.70f, 0.44f, 	 0.0f, 0.0f,     -0.8f, 0.5f,  0.0f, // Left Side
+	Trang_offset_x + (Trang_scall) * -0.5f,	Trang_offset_z + (Trang_scall) * 0.0f,	Trang_offset_y + (Trang_scall) * -0.5f,     0.83f, 0.70f, 0.44f,	 5.0f, 0.0f,     -0.8f, 0.5f,  0.0f, // Left Side
+	Trang_offset_x + (Trang_scall) * 0.0f,	Trang_offset_z + (Trang_scall) * 0.8f,	Trang_offset_y + (Trang_scall) * 0.0f,     0.92f, 0.86f, 0.76f,	 2.5f, 5.0f,     -0.8f, 0.5f,  0.0f, // Left Side
 
-	-0.5f, 0.0f, -0.5f,     0.83f, 0.70f, 0.44f,	 5.0f, 0.0f,      0.0f, 0.5f, -0.8f, // Non-facing side
-	 0.5f, 0.0f, -0.5f,     0.83f, 0.70f, 0.44f,	 0.0f, 0.0f,      0.0f, 0.5f, -0.8f, // Non-facing side
-	 0.0f, 0.8f,  0.0f,     0.92f, 0.86f, 0.76f,	 2.5f, 5.0f,      0.0f, 0.5f, -0.8f, // Non-facing side
+	Trang_offset_x + (Trang_scall) * -0.5f,	Trang_offset_z + (Trang_scall) * 0.0f,	Trang_offset_y + (Trang_scall) * -0.5f,     0.83f, 0.70f, 0.44f,	 5.0f, 0.0f,      0.0f, 0.5f, -0.8f, // Non-facing side
+	Trang_offset_x + (Trang_scall) * 0.5f,	Trang_offset_z + (Trang_scall) * 0.0f,	Trang_offset_y + (Trang_scall) * -0.5f,     0.83f, 0.70f, 0.44f,	 0.0f, 0.0f,      0.0f, 0.5f, -0.8f, // Non-facing side
+	Trang_offset_x + (Trang_scall) * 0.0f,	Trang_offset_z + (Trang_scall) * 0.8f,	Trang_offset_y + (Trang_scall) * 0.0f,     0.92f, 0.86f, 0.76f,	 2.5f, 5.0f,      0.0f, 0.5f, -0.8f, // Non-facing side
 
-	 0.5f, 0.0f, -0.5f,     0.83f, 0.70f, 0.44f,	 0.0f, 0.0f,      0.8f, 0.5f,  0.0f, // Right side
-	 0.5f, 0.0f,  0.5f,     0.83f, 0.70f, 0.44f,	 5.0f, 0.0f,      0.8f, 0.5f,  0.0f, // Right side
-	 0.0f, 0.8f,  0.0f,     0.92f, 0.86f, 0.76f,	 2.5f, 5.0f,      0.8f, 0.5f,  0.0f, // Right side
+	Trang_offset_x + (Trang_scall) * 0.5f,	Trang_offset_z + (Trang_scall) * 0.0f,	Trang_offset_y + (Trang_scall) * -0.5f,     0.83f, 0.70f, 0.44f,	 0.0f, 0.0f,      0.8f, 0.5f,  0.0f, // Right side
+	Trang_offset_x + (Trang_scall) * 0.5f,	Trang_offset_z + (Trang_scall) * 0.0f,	Trang_offset_y + (Trang_scall) * 0.5f,     0.83f, 0.70f, 0.44f,	 5.0f, 0.0f,      0.8f, 0.5f,  0.0f, // Right side
+	Trang_offset_x + (Trang_scall) * 0.0f,	Trang_offset_z + (Trang_scall) * 0.8f,	Trang_offset_y + (Trang_scall) * 0.0f,     0.92f, 0.86f, 0.76f,	 2.5f, 5.0f,      0.8f, 0.5f,  0.0f, // Right side
 
-	 0.5f, 0.0f,  0.5f,     0.83f, 0.70f, 0.44f,	 5.0f, 0.0f,      0.0f, 0.5f,  0.8f, // Facing side
-	-0.5f, 0.0f,  0.5f,     0.83f, 0.70f, 0.44f, 	 0.0f, 0.0f,      0.0f, 0.5f,  0.8f, // Facing side
-	 0.0f, 0.8f,  0.0f,     0.92f, 0.86f, 0.76f,	 2.5f, 5.0f,      0.0f, 0.5f,  0.8f  // Facing side
+	Trang_offset_x + (Trang_scall) * 0.5f,	Trang_offset_z + (Trang_scall) * 0.0f,	Trang_offset_y + (Trang_scall) * 0.5f,     0.83f, 0.70f, 0.44f,	 5.0f, 0.0f,      0.0f, 0.5f,  0.8f, // Facing side
+	Trang_offset_x + (Trang_scall) * -0.5f,	Trang_offset_z + (Trang_scall) * 0.0f,	Trang_offset_y + (Trang_scall) * 0.5f,     0.83f, 0.70f, 0.44f,	 0.0f, 0.0f,      0.0f, 0.5f,  0.8f, // Facing side
+	Trang_offset_x + (Trang_scall) * 0.0f,	Trang_offset_z + (Trang_scall) * 0.8f,	Trang_offset_y + (Trang_scall) * 0.0f,     0.92f, 0.86f, 0.76f,	 2.5f, 5.0f,      0.0f, 0.5f,  0.8f  // Facing side
 };
 
 // Indices for vertices order
@@ -59,14 +62,14 @@ GLuint indices[] =
 
 GLfloat lightVertices[] =
 { //     COORDINATES     //
-	-0.1f, -0.1f,  0.1f, 
-	-0.1f, -0.1f, -0.1f,
-	 0.1f, -0.1f, -0.1f,
-	 0.1f, -0.1f,  0.1f,
-	-0.1f,  0.1f,  0.1f,
-	-0.1f,  0.1f, -0.1f,
-	 0.1f,  0.1f, -0.1f,
-	 0.1f,  0.1f,  0.1f
+	-0.10f, -0.10f,  0.10f, 
+	-0.10f, -0.10f, -0.10f,
+	 0.10f, -0.10f, -0.10f,
+	 0.10f, -0.10f,  0.10f,
+	-0.10f,  0.10f,  0.10f,
+	-0.10f,  0.10f, -0.10f,
+	 0.10f,  0.10f, -0.10f,
+	 0.10f,  0.10f,  0.10f
 };
 
 GLuint lightIndices[] =
@@ -83,6 +86,38 @@ GLuint lightIndices[] =
 	1, 4, 0,
 	4, 5, 6,
 	4, 6, 7
+};
+/*
+(Hex_offset + (Hex_scall) * 0.0f), (Hex_offset + (Hex_scall) * 0.0f), (Hex_offset + (Hex_scall) * 0.0f),    //center
+(Hex_offset + (Hex_scall) * -0.5f), (Hex_offset + (Hex_scall) * 1.0f), (Hex_offset + (Hex_scall) * 0.0f),    // left top
+(Hex_offset + (Hex_scall) * 0.5f), (Hex_offset + (Hex_scall) * 1.0f), (Hex_offset + (Hex_scall) * 0.0f),    // right top
+(Hex_offset + (Hex_scall) * 1.0f), (Hex_offset + (Hex_scall) * 0.0f), (Hex_offset + (Hex_scall) * 0.0f),    // right
+(Hex_offset + (Hex_scall) * 0.5f), (Hex_offset + (Hex_scall) * 1.0f), (Hex_offset + (Hex_scall) * 0.0f),    // right bottom
+(Hex_offset + (Hex_scall) * -0.5f), (Hex_offset + (Hex_scall) * -1.0f), (Hex_offset + (Hex_scall) * 0.0f),    // left bottom
+(Hex_offset + (Hex_scall) * -1.0f), (Hex_offset + (Hex_scall) * 0.0f), (Hex_offset + (Hex_scall) * 0.0f)     // left
+*/
+
+const unsigned int Hex_offset = 3;
+const unsigned int Hex_scall = 1;
+
+
+GLfloat hex_Vertices[] =
+{ //     COORDINATES     //
+	(Hex_offset + (Hex_scall) * 0.0f), (Hex_offset + (Hex_scall) * 0.0f), (Hex_offset + (Hex_scall) * 0.0f),    //center
+	(Hex_offset + (Hex_scall) * -0.5f), (Hex_offset + (Hex_scall) * 1.0f), (Hex_offset + (Hex_scall) * 0.0f),    // left top
+	(Hex_offset + (Hex_scall) * 0.5f), (Hex_offset + (Hex_scall) * 1.0f), (Hex_offset + (Hex_scall) * 0.0f),    // right top
+	(Hex_offset + (Hex_scall) * 0.5f), (Hex_offset + (Hex_scall) * 1.0f), (Hex_offset + (Hex_scall) * 0.0f),    // right bottom
+	(Hex_offset + (Hex_scall) * 0.5f), (Hex_offset + (Hex_scall) * 1.0f), (Hex_offset + (Hex_scall) * 0.0f),    // right bottom
+	(Hex_offset + (Hex_scall) * -0.5f), (Hex_offset + (Hex_scall) * -1.0f), (Hex_offset + (Hex_scall) * 0.0f),    // left bottom
+	(Hex_offset + (Hex_scall) * -1.0f), (Hex_offset + (Hex_scall) * 0.0f), (Hex_offset + (Hex_scall) * 0.0f),     // left
+};
+
+GLuint hex_Indices[] =
+{
+0, 1, 
+2, 3, 
+4, 5, 
+6, 1
 };
 
 int main()
@@ -117,82 +152,130 @@ int main()
 	glViewport(0, 0, width, height);
 
 
-	// Generates Shader object using shaders default.vert and default.frag
-	Shader shaderProgram("default.vert", "default.frag");
+	//Tang
+
+			// Generates Shader object using shaders default.vert and default.frag
+			Shader shaderProgram("default.vert", "default.frag");
 
 
-	// Generates Vertex Array Object and binds it
-	VAO VAO1;
-	VAO1.Bind();
+			// Generates Vertex Array Object and binds it
+			VAO VAO1;
+			VAO1.Bind();
 
-	// Generates Vertex Buffer Object and links it to vertices
-	VBO VBO1(vertices, sizeof(vertices));
-	// Generates Element Buffer Object and links it to indices
-	EBO EBO1(indices, sizeof(indices));
+			// Generates Vertex Buffer Object and links it to vertices
+			VBO VBO1(vertices, sizeof(vertices));
+			// Generates Element Buffer Object and links it to indices
+			EBO EBO1(indices, sizeof(indices));
 
-	// Links VBO attributes such as coordinates and colors to VAO
-	// slits up the array into each data chunk by bits, then passes it to the VA0
-	//aslo need to update shader such  that the new feilds are added.
-	VAO1.LinkAttrib(VBO1, 0, 3, GL_FLOAT, 11 * sizeof(float), (void*)0);
-	VAO1.LinkAttrib(VBO1, 1, 3, GL_FLOAT, 11 * sizeof(float), (void*)(3 * sizeof(float)));
-	VAO1.LinkAttrib(VBO1, 2, 2, GL_FLOAT, 11 * sizeof(float), (void*)(6 * sizeof(float)));
-	VAO1.LinkAttrib(VBO1, 3, 3, GL_FLOAT, 11 * sizeof(float), (void*)(8 * sizeof(float)));
-	// Unbind all to prevent accidentally modifying them
-	VAO1.Unbind();
-	VBO1.Unbind();
-	EBO1.Unbind();
+			// Links VBO attributes such as coordinates and colors to VAO
+			// slits up the array into each data chunk by bits, then passes it to the VA0
+			//aslo need to update shader such  that the new feilds are added.
+			VAO1.LinkAttrib(VBO1, 0, 3, GL_FLOAT, 11 * sizeof(float), (void*)0);
+			VAO1.LinkAttrib(VBO1, 1, 3, GL_FLOAT, 11 * sizeof(float), (void*)(3 * sizeof(float)));
+			VAO1.LinkAttrib(VBO1, 2, 2, GL_FLOAT, 11 * sizeof(float), (void*)(6 * sizeof(float)));
+			VAO1.LinkAttrib(VBO1, 3, 3, GL_FLOAT, 11 * sizeof(float), (void*)(8 * sizeof(float)));
+			// Unbind all to prevent accidentally modifying them
+			VAO1.Unbind();
+			VBO1.Unbind();
+			EBO1.Unbind();
+
+
+			//enable and load the object
+			glm::vec3 pyramidPos = glm::vec3(0.0f, 0.0f, 0.0f);
+			glm::mat4 pyramidModel = glm::mat4(1.0f);
+			pyramidModel = glm::translate(pyramidModel, pyramidPos);
 
 
 
+	//Light 
 	//need to create the shader function/deff
 
 	// Shader for light cube
-	Shader lightShader("light.vert", "light.frag");
-	// Generates Vertex Array Object and binds it
-	VAO lightVAO;
-	lightVAO.Bind();
-	// Generates Vertex Buffer Object and links it to vertices
-	VBO lightVBO(lightVertices, sizeof(lightVertices));
-	// Generates Element Buffer Object and links it to indices
-	EBO lightEBO(lightIndices, sizeof(lightIndices));
-	// Links VBO attributes such as coordinates and colors to VAO
-	lightVAO.LinkAttrib(lightVBO, 0, 3, GL_FLOAT, 3 * sizeof(float), (void*)0);
-	// Unbind all to prevent accidentally modifying them
-	lightVAO.Unbind();
-	lightVBO.Unbind();
-	lightEBO.Unbind();
+			Shader lightShader("light.vert", "light.frag");
+			// Generates Vertex Array Object and binds it
+			VAO lightVAO;
+			lightVAO.Bind();
+			// Generates Vertex Buffer Object and links it to vertices
+			VBO lightVBO(lightVertices, sizeof(lightVertices));
+			// Generates Element Buffer Object and links it to indices
+			EBO lightEBO(lightIndices, sizeof(lightIndices));
+			// Links VBO attributes such as coordinates and colors to VAO
+			lightVAO.LinkAttrib(lightVBO, 0, 3, GL_FLOAT, 3 * sizeof(float), (void*)0);
+			// Unbind all to prevent accidentally modifying them
+			lightVAO.Unbind();
+			lightVBO.Unbind();
+			lightEBO.Unbind();
+
+			//enable and color the light
+			glm::vec4 lightColor = glm::vec4(1.0f, 1.0f, 1.0f, 1.0f);
+			glm::vec3 lightPos = glm::vec3(0.5f, 0.5f, 0.5f);
+			glm::mat4 lightModel = glm::mat4(1.0f);
+			lightModel = glm::translate(lightModel, lightPos);
 
 
 
-	//enable and color the light
-		glm::vec4 lightColor = glm::vec4(1.0f, 1.0f, 1.0f, 1.0f);
-		glm::vec3 lightPos = glm::vec3(0.5f, 0.5f, 0.5f);
-		glm::mat4 lightModel = glm::mat4(1.0f);
-		lightModel = glm::translate(lightModel, lightPos);
+	//hex start
+
+			// Shader for light cube
+			Shader hex_Shader("hex.vert", "hex.frag");
+			// Generates Vertex Array Object and binds it
+			VAO hex_VAO;
+			hex_VAO.Bind();
+			// Generates Vertex Buffer Object and links it to vertices
+			VBO hex_VBO(hex_Vertices, sizeof(hex_Vertices));
+			// Generates Element Buffer Object and links it to indices
+			EBO hex_EBO(hex_Indices, sizeof(hex_Indices));
+			// Links VBO attributes such as coordinates and colors to VAO
+			hex_VAO.LinkAttrib(hex_VBO, 0, 3, GL_FLOAT, 3 * sizeof(float), (void*)0);
+			hex_VAO.LinkAttrib(hex_VBO, 1, 3, GL_FLOAT, 11 * sizeof(float), (void*)(3 * sizeof(float)));
+			hex_VAO.LinkAttrib(hex_VBO, 2, 2, GL_FLOAT, 11 * sizeof(float), (void*)(6 * sizeof(float)));
+			hex_VAO.LinkAttrib(hex_VBO, 3, 3, GL_FLOAT, 11 * sizeof(float), (void*)(8 * sizeof(float)));
+			// Unbind all to prevent accidentally modifying them
+			hex_VAO.Unbind();
+			hex_VBO.Unbind();
+			hex_EBO.Unbind();
+
+			//enable the shape
+			glm::vec3 hex_Pos = glm::vec3(0.5f, 0.5f, 0.5f);
+			glm::mat4 hex_Model = glm::mat4(1.0f);
+			hex_Model = glm::translate(hex_Model, hex_Pos);
 
 
-	//enable and load the object
-	glm::vec3 pyramidPos = glm::vec3(0.0f, 0.0f, 0.0f);
-	glm::mat4 pyramidModel = glm::mat4(1.0f);
-	pyramidModel = glm::translate(pyramidModel, pyramidPos);
+	//hex end
+
+
+
+
+
+
+
 
 
 	//export the the render
-	lightShader.Activate();
-	glUniformMatrix4fv(glGetUniformLocation(lightShader.ID, "model"), 1, GL_FALSE, glm::value_ptr(lightModel));
-	//give it light
-	glUniform4f(glGetUniformLocation(lightShader.ID, "lightColor"), lightColor.x, lightColor.y, lightColor.z, lightColor.w);
 
+		//Light
+			lightShader.Activate();
+			glUniformMatrix4fv(glGetUniformLocation(lightShader.ID, "model"), 1, GL_FALSE, glm::value_ptr(lightModel));
+			//give it light
+			glUniform4f(glGetUniformLocation(lightShader.ID, "lightColor"), lightColor.x, lightColor.y, lightColor.z, lightColor.w);
 
-	shaderProgram.Activate();
-	glUniformMatrix4fv(glGetUniformLocation(shaderProgram.ID, "model"), 1, GL_FALSE, glm::value_ptr(pyramidModel));
-	glUniform4f(glGetUniformLocation(shaderProgram.ID, "lightColor"), lightColor.x, lightColor.y, lightColor.z, lightColor.w);
-	glUniform3f(glGetUniformLocation(shaderProgram.ID, "lightPos"), lightPos.x, lightPos.y, lightPos.z);
+		//Tang
+			shaderProgram.Activate();
+			glUniformMatrix4fv(glGetUniformLocation(shaderProgram.ID, "model"), 1, GL_FALSE, glm::value_ptr(pyramidModel));
+			glUniform4f(glGetUniformLocation(shaderProgram.ID, "lightColor"), lightColor.x, lightColor.y, lightColor.z, lightColor.w);
+			glUniform3f(glGetUniformLocation(shaderProgram.ID, "lightPos"), lightPos.x, lightPos.y, lightPos.z);
+
+		//Hex
+			hex_Shader.Activate();
+			glUniformMatrix4fv(glGetUniformLocation(hex_Shader.ID, "model"), 1, GL_FALSE, glm::value_ptr(pyramidModel));
+			glUniform4f(glGetUniformLocation(hex_Shader.ID, "lightColor"), lightColor.x, lightColor.y, lightColor.z, lightColor.w);
+			glUniform3f(glGetUniformLocation(hex_Shader.ID, "lightPos"), lightPos.x, lightPos.y, lightPos.z);
 
 
 	// Original code from the tutorial
 	Texture brickTex("moss.png", GL_TEXTURE_2D, GL_TEXTURE0, GL_RGBA, GL_UNSIGNED_BYTE);
 	brickTex.texUnit(shaderProgram, "tex0", 0);
+	brickTex.texUnit(hex_Shader, "tex0", 0);
 
 
 
@@ -217,29 +300,46 @@ int main()
 
 
 		// Tells OpenGL which Shader Program we want to use
-		shaderProgram.Activate();
-		// Exports the camera Position to the Fragment Shader for specular lighting
-		glUniform3f(glGetUniformLocation(shaderProgram.ID, "camPos"), camera.Position.x, camera.Position.y, camera.Position.z);
-		// Export the camMatrix to the Vertex Shader of the pyramid
-		camera.Matrix(shaderProgram, "camMatrix");
-		// Binds texture so that is appears in rendering
-		brickTex.Bind();
-		// Bind the VAO so OpenGL knows to use it
-		VAO1.Bind();
-		// Draw primitives, number of indices, datatype of indices, index of indices
-		glDrawElements(GL_TRIANGLES, sizeof(indices) / sizeof(int), GL_UNSIGNED_INT, 0);
+				shaderProgram.Activate();
+				// Exports the camera Position to the Fragment Shader for specular lighting
+				glUniform3f(glGetUniformLocation(shaderProgram.ID, "camPos"), camera.Position.x, camera.Position.y, camera.Position.z);
+				// Export the camMatrix to the Vertex Shader of the pyramid
+				camera.Matrix(shaderProgram, "camMatrix");
+				// Binds texture so that is appears in rendering
+				brickTex.Bind();
+				// Bind the VAO so OpenGL knows to use it
+				VAO1.Bind();
+				// Draw primitives, number of indices, datatype of indices, index of indices
+				glDrawElements(GL_TRIANGLES, sizeof(indices) / sizeof(int), GL_UNSIGNED_INT, 0);
 
 
 
 		// Tells OpenGL which Shader Program we want to use
-		lightShader.Activate();
-		// Export the camMatrix to the Vertex Shader of the light cube
-		camera.Matrix(lightShader, "camMatrix");
-		// Bind the VAO so OpenGL knows to use it
-		lightVAO.Bind();
-		// Draw primitives, number of indices, datatype of indices, index of indices
-		glDrawElements(GL_TRIANGLES, sizeof(lightIndices) / sizeof(int), GL_UNSIGNED_INT, 0);
+				lightShader.Activate();
+				// Export the camMatrix to the Vertex Shader of the light cube
+				camera.Matrix(lightShader, "camMatrix");
+				// Bind the VAO so OpenGL knows to use it
+				lightVAO.Bind();
+				// Draw primitives, number of indices, datatype of indices, index of indices
+				glDrawElements(GL_TRIANGLES, sizeof(lightIndices) / sizeof(int), GL_UNSIGNED_INT, 0);
 
+
+		//draw hex
+
+				hex_Shader.Activate();
+				// Exports the camera Position to the Fragment Shader for specular lighting
+				glUniform3f(glGetUniformLocation(hex_Shader.ID, "camPos"), camera.Position.x, camera.Position.y, camera.Position.z);
+				// Export the camMatrix to the Vertex Shader of the pyramid
+				camera.Matrix(hex_Shader, "camMatrix");
+				// Binds texture so that is appears in rendering
+				brickTex.Bind();
+				// Bind the VAO so OpenGL knows to use it
+				hex_VAO.Bind();
+				// Draw primitives, number of indices, datatype of indices, index of indices
+				glDrawElements(GL_TRIANGLES, sizeof(indices) / sizeof(int), GL_UNSIGNED_INT, 0);
+
+
+		//end draw of hex
 
 		// Swap the back buffer with the front buffer
 		glfwSwapBuffers(window);
@@ -255,6 +355,7 @@ int main()
 	EBO1.Delete();
 	brickTex.Delete();
 	shaderProgram.Delete();
+	hex_Shader.Delete();
 	// Delete window before ending the program
 	glfwDestroyWindow(window);
 	// Terminate GLFW before ending the program
